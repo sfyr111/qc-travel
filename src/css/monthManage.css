@@ -1,0 +1,262 @@
+i{
+    font-style: normal;
+}
+b{
+    font-weight: normal;
+}
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+}
+.content{
+    width: 100%;
+    background: #f8f8f8;
+    min-height: 620px;
+}
+.content .page1200{
+    padding-top: 10px;
+}
+.content .page1200 .title{
+    width: 150px;
+    background: #f0f0f0;
+}
+.content .page1200 .title ul{
+    padding:0 10px;
+}
+.content .page1200 .title ul li{
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    color:#333333;
+    border-bottom: 1px solid #dcdcdc;
+    padding-left: 18px;
+    cursor: pointer;
+}
+ .content .page1200 .title ul li span{
+    color:#999999;
+}
+.content .page1200 .title ul li.active{
+    color:#dd1827;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    width: 121px;
+    margin-left: -8px;
+    padding-left: 26px;
+    padding-top: 1px;
+    margin-top: -1px;
+}
+.content .page1200 .title ul li.active span{
+    color:#dd1827;
+}
+.content .page1200 .month_detail{
+    width: 1030px;
+}
+
+.content .page1200 .month_detail .fr-title{
+    height: 95px;
+    padding:0 20px;
+    background: #fffbef;
+    margin-bottom: 10px;
+}
+.content .page1200 .month_detail .fr-title p{
+    font-size: 14px;
+    line-height: 45px;
+    color:#686860;
+}
+.content .page1200 .month_detail .fr-title p span{
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+.content .page1200 .month_detail .fr-title p.available span{
+    font-size: 16px;
+    color:#333333;
+    font-weight:bold;
+}
+.content .page1200 .month_detail .fr-title p.available span i{
+    color:#f87444;
+}
+.content .page1200 .month_detail .fr-title p.available b{
+    color:#30abfb;
+}
+.content .page1200 .month_detail .fr-title p b{
+    display: block;
+    float: right;
+    cursor: pointer;
+}
+.content .page1200 .month_detail .fr-title p.available-detail b{
+    width: 115px;
+    height: 34px;
+    background: #ee3435;
+    line-height: 34px;
+    text-align: center;
+    color:#fff;
+    border-radius: 3px;
+}
+.content .page1200 .month_detail .fr-title p.available-detail b.hasApply{
+    background: #e6e6e6;
+    cursor: default;
+}
+.content .page1200 .month_detail .monthly-list ul{
+    background: #fff;
+    padding:10px;
+    margin-bottom: 10px;
+}
+.content .page1200 .month_detail .monthly-list ul li p{
+    float: left;
+    width: 14%;
+    text-align: center;
+    font-size: 12px;
+}
+.content .page1200 .month_detail .monthly-list ul li{
+    height: 50px;
+    line-height: 50px;
+    color:#636363;
+    border-bottom: 1px dashed #dbdbdb;
+}
+.content .page1200 .month_detail .monthly-list ul li.list-title{
+    height: 30px;
+    background: #eeeeee;
+    line-height: 30px;
+    color:#353535;
+    border:0;
+}
+.content .page1200 .month_detail .monthly-list ul li.list-title p{
+    box-sizing: border-box;
+    border-right: 1px solid #fff;
+}
+.content .page1200 .month_detail .monthly-list ul li.list-title p.last{
+    border:0;
+}
+.content .page1200 .month_detail .monthly-list ul li.list-last{
+    border:0;
+}
+.content .page1200 .month_detail .monthly-list .total{
+    padding:10px 20px 0;
+    background: #fff;
+    margin-bottom: 95px;
+}
+.content .page1200 .month_detail .monthly-list .total .total-detail p{
+    height: 26px;
+    line-height: 26px;
+    color:#666666;
+}
+.content .page1200 .month_detail .monthly-list .total .total-detail p.repayment{
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #dbdbdb;
+}
+.content .page1200 .month_detail .monthly-list .total .total-detail p span{
+    display: block;
+    float: right;
+}
+.content .page1200 .month_detail .monthly-list .total .total-detail p span i{
+    color:#343434;
+}
+.content .page1200 .month_detail .monthly-list .total .total-detail p.repayment span i{
+    color:#f23d46;
+}
+.content .page1200 .month_detail .monthly-list .total .repayment-box{
+    height: 65px;
+    padding:0 20px;
+    position: relative;
+}
+.content .page1200 .month_detail .monthly-list .total .repayment-box span.repayment-btn{
+    display: block;
+    width: 78px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    color:#fff;
+    text-align: center;
+    background: #fc7546;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    right:20px;
+    top:15px;
+} 
+.content .page1200 .month_detail .bill{
+    background: #fff;
+    padding:10px;
+}
+.content .page1200 .month_detail .bill table {
+    width: 100%;
+}
+.content .page1200 .month_detail .bill table thead {
+    background-color: #eeeeee;
+}
+.content .page1200 .month_detail .bill table thead tr {
+    text-align: center;
+}
+.content .page1200 .month_detail .bill table thead tr td {
+    height: 30px;
+    line-height: 30px;
+    color:#353535;
+    border-right: 1px solid #fff
+}
+.content .page1200 .month_detail .bill table tbody tr td {
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+.content .page1200 .month_detail .bill table tbody tr td a {
+    color: #dd1827;
+}
+.content .page1200 .month_detail .bill .bill-title{
+    height: 30px;
+    background: #eeeeee;
+    line-height: 30px;
+    color:#353535;
+    box-sizing: border-box;
+}
+.content .page1200 .month_detail .bill .bill-title span{
+    display: block;
+    width: 11%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 1px solid #fff;
+}
+.content .page1200 .month_detail .bill .bill-title span.last{
+    border:0;
+}
+.content .page1200 .month_detail .bill .bill-text{
+    /*height: 30px;*/
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.content .page1200 .month_detail .bill .bill-text p.notice{
+    padding-top: 12px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color:#9a9a9a;
+}
+.content .page1200 .month_detail .bill .bill-text p.reason{
+    text-align: center;
+}
+.content .page1200 .month_detail .bill .bill-text p.notice a{
+    color: #dd1827;
+}
+.month_row {
+    width: 100%;
+    line-height: 36px;
+}
+.month_row span {
+    display: block;
+    width: 11%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 1px solid #fff;
+}
+.month_row a {
+    display: block;
+    color: #dd1827;
+    width: 11%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 1px solid #fff;
+}

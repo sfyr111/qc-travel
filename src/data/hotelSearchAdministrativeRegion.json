@@ -1,0 +1,21 @@
+{
+  "result": [
+    {
+      "areaType": 2,
+      "cityId": 90101,
+      "firstSpell": "N",
+      "id": 9010124,
+      "name": "南苑机场、南宫地区2"
+    },
+    {
+      "areaType": 2,
+      "cityId": 90101,
+      "firstSpell": "X",
+      "id": 9010125,
+      "name": "香山风景区2"
+    }
+  ],
+  "resultCode": "0",
+  "resultMessage": "成功",
+  "success": true
+}

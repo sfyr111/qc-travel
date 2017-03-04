@@ -1,0 +1,169 @@
+.content {
+    width: 100%;
+    background: #f8f8f8;
+    min-height: 620px;
+    padding-bottom: 120px;
+}
+.content .page1200 .state p.information{
+    padding: 0 0 0px 20px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #dd7d02;
+    font-weight: bold;
+}
+.content .page1200 .state p.information span{
+    display: inline-block;
+    margin-right: 35px;
+}
+.content .page1200 .state{
+    width: 1200px;
+    background: #fbeedd;
+    margin-bottom: 15px;
+    position: relative;
+}
+.content .page1200 .state p.information span{
+    display: inline-block;
+    margin-right: 35px;
+}
+.content .page1200 .state p.state-notice{
+    padding: 0 0 20px 20px;
+    font-size: 12px;
+    color:#fe3a3b;
+}
+.content .page1200 .state b.toPay{
+    display: block;
+    width: 80px;
+    height: 30px;
+    background: #fc7546;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    right:35px;
+    top:50%;
+    margin-top: -15px;
+    cursor: pointer;
+}
+.content .page1200 .state b.cancel{
+    display: block;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color:#31acfa;
+    position: absolute;
+    right:120px;
+    top:50%;
+    margin-top: -15px;
+    cursor: pointer;
+}
+.content .page1200 .state p.information span{
+    display: inline-block;
+    margin-right: 35px;
+}
+.content .page1200 .state p.state-notice a{
+    cursor: pointer;
+    text-decoration: underline;
+    color:#31acfa;
+}
+.content .page1200 .flight-information{
+    padding:20px 35px 0;
+    background: #fff;
+}
+.content .page1200 .flight-information p.flight-information-title{
+    position: relative;
+    padding-bottom: 10px;
+     
+}
+.content .page1200 .flight-information p.flight-information-title span.fl{
+    display: block;
+    width: 100px;
+    height: 18px;
+    font-size: 12px;
+    line-height:18px;
+    font-weight: bold;
+    color:#333;
+}
+.content .page1200 .flight-information p.flight-information-title a.fr{
+    display: block;
+    width: 100px;
+    height: 18px;
+    text-align: right;
+    font-size: 12px;
+    line-height:18px;
+    color:#31acfa;
+}
+.content .page1200 .flight-information table{
+    width: 100%;
+    text-align: center;
+}
+.content .page1200 .flight-information table tr td{
+    padding:0 10px;
+}
+.content .page1200 .flight-information table thead tr{
+    background: #f0f0f0;
+    height: 35px;
+    border:1px solid #d9d9d9;
+}
+.content .page1200 .flight-information table tbody tr{
+    height: 70px;
+}
+.content .page1200 .flight-information table tbody tr td{
+    border:1px solid #d9d9d9;
+    position: relative;
+}
+.content .page1200 .flight-information table tbody tr td a{
+    color:#31acfa;
+}
+.content .page1200 .information-list{
+    background: #fff;
+    padding:0 35px;
+}
+.content .page1200 .information-list ul li{
+    border-bottom: 1px dashed #ddd;
+    padding:20px 0;
+}
+.content .page1200 .information-list ul li p{
+    font-size: 12px;
+    line-height: 26px;
+    color:#656565;
+}
+.content .page1200 .information-list ul li p.information-title{
+    font-weight: bold;
+    color:#333;
+}
+.content .page1200 .information-list ul li p span{
+    color:#333;
+}
+.content .page1200 .information-list ul li.total{
+    border:0;
+    padding:30px 0 40px;
+    position: relative;
+}
+.content .page1200 .information-list ul li.total p{
+    font-size: 18px;
+    font-weight: bold;
+    color:#333;
+}
+.content .page1200 .information-list ul li.total p i{
+    color:#f73b3c;
+}
+.content .page1200 .information-list ul li.total b.toPay{
+    display: block;
+    width: 80px;
+    height: 30px;
+    background: #fc7546;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    right:0;
+    top:50%;
+    margin-top: -15px;
+    cursor: pointer;
+}

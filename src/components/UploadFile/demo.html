@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="upload"> 
+		  <input type="file" name="file" class="up1"/>
+		</div>
+		<div class="upload">
+		  <input type="file" name="file" class="up2"/>
+		</div>
+	</body>
+
+	<script src="./uploadFile.js"></script>
+	<script>
+		var url = 'http://192.168.16.210:8080/qc-travel/security/month_pay/upload_important_pic'
+		var opt = {
+		  uploadUrl: this.url,
+		  allowSize: 5,     //    上传大小限制  默认5M
+		  uploadStart: function () {
+		    console.log('开始上传')
+		  },
+		  uploadProgress: function (loaded, total) {
+		    //console.log('loaded:' + loaded)
+		    //console.log('total:' + total)
+		  },
+		  uploadSuccess: function (fileInfo) {
+		    console.log(fileInfo)
+		  },
+		  uploadFail: function (fileInfo) {
+		    console.log(fileInfo)
+		  }
+		}
+
+		new UploadFile(opt)
+	</script>
+	</html>	

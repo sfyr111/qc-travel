@@ -1,0 +1,91 @@
+{
+"result": {
+"orderInfo": {
+"orderFlag": "0",
+"placeOrderTime": "11:37:33",
+"contactEmail": "",
+"orderCode": 46928225029,
+"modifiedTime": "13:00:00",
+"onlineMoney": {
+"cent": 428000,
+"currency": "CNY"
+},
+"venderId": "588586",
+"orderStatus": 3,
+"modifiedDate": "2016-12-08",
+"placeOrderDate": "2016-12-08",
+"userId": "齐采科技",
+"discountTotalMoney": 0,
+"conctactMobile": "13631262579",
+"orderMoney": 4280,
+"isSafe": 0,
+"paymentMethod": "1",
+"conctactName": "李**"
+},
+"paymentInfo": {
+"payOrderMoney": 4280,
+"balanceMoney": 0,
+"totalDiscountMoney": 0,
+"totalOrderMoney": 4280
+},
+"flag": true,
+"dispatchInfo": {
+"needinvoice": "0",
+"status": "0",
+"dispatchContent": "Itinerary",
+"deliveryType": 1,
+"name": "李**",
+"telephone": "",
+"dispatchId": 3985013,
+"insurInvoice": "0",
+"mobile": "13631262579"
+},
+"ticketRegulations": [
+{
+"ticketRegulation": {
+"ticketBack": "退改签规定以航空公司最新公布为准，详情请致电4006115718",
+"ticketChange": "退改签规定以航空公司最新公布为准，详情请致电4006115718",
+"depcityName": "北京",
+"tripType": 0,
+"arrcityName": "成都",
+"ticketTurn": "退改签规定以航空公司最新公布为准，详情请致电4006115718"
+}
+}
+],
+"ticketListBeans": [
+{
+"TicketListBean": {
+"passengerNum": "441802199204260518",
+"depTerminal": "T3",
+"ticketStatus": 5,
+"id": 4814773,
+"seatCode": "A",
+"depcityName": "北京",
+"ticketType": "ADT",
+"ticketPrice": 4280,
+"arrcityName": "成都",
+"arrDate": "2017-01-10",
+"arrairdrome": "双流机场",
+"insurancePrice": 0,
+"oiltax": 0,
+"depairdrome": "首都机场",
+"buildFee": 50,
+"papersType": "IDC",
+"tripType": 0,
+"airWay": "中国国航",
+"ticketNo": "9991187671688",
+"price": 4280,
+"arriveTime": "1355",
+"passengerName": "李俊华",
+"flightDate": "2017-01-10",
+"arrTerminal": "T2楼",
+"airplaneNumber": "CA4102",
+"takeOffTime": "1045"
+}
+}
+]
+},
+"resultCode": "0",
+"resultMessage": "成功",
+"success": true
+}

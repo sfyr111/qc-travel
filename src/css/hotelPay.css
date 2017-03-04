@@ -1,0 +1,123 @@
+.hotel_pay_main{
+	width: 100%;
+	background: #f6f6f6;
+	padding: 39px 0 45px 0;
+}
+.hotel_pay_content{
+	width: 1200px;
+	margin: 0 auto;
+}
+.hotel_pay_head{
+	background: #eaeaea;
+	padding: 44px 22px 44px 48px;
+}
+
+.hotel_pay_head_left{
+	padding-left: 46px;
+	position: relative;
+	height: 50px;
+}
+.hotel_pay_head_left i{
+	color: #3bc089;
+	font-size: 44px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -22px;
+}
+.pay_time{
+	margin-top: 10px;
+}
+.hotel_pay_head_right{
+	line-height: 50px;
+}
+.hotel_pay_head_right em{
+	color: #ee3434;
+}
+.hotel_pay_bottom{
+	width: 1162px;
+	height: 762px;
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 18px;
+	margin-top: 12px;
+}
+.pay_method_content{
+	border-bottom: 1px solid #ddd;
+	padding: 22px 60px 50px 60px;
+	font-size: 14px;
+}
+.pay_method_content a{
+	display: inline-block;
+	line-height: 28px;
+	text-align: center;
+	width: 90px;
+	height: 28px;
+	border: 1px solid #959595;
+	margin-right: 26px;
+	position: relative;
+}
+.pay_method_content a.month_pay_checked{
+	border: 1px solid #fc3c3c;
+}
+.pay_method_content a.month_pay_checked em{
+	display: block;
+}
+.month_pay{
+	margin-bottom: 34px;
+	display: table;
+}
+.month_pay a{
+	margin-right: 15px;
+}
+.month_pay a:hover{
+	color: #333;
+}
+.pay_method_content a:hover{
+	color: #666;
+}
+.available_balance{
+	height: 28px;
+	display: table-cell;
+	vertical-align: bottom;
+}
+.pay_method_content a em{
+	display: inline-block;
+	border-left: 17px solid transparent;
+	border-bottom: 17px solid #fc3c3c;
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: none;
+}
+.pay_method_content a i{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	color: #fff;
+	font-size: 12px;
+}
+.pay_method{
+	margin-bottom: 45px;
+}
+.pay_method_input{
+	padding-left: 60px;
+}
+.pay_method_input_title{
+	margin-bottom: 15px;
+}
+.pay_method_input input{
+	width: 254px;
+	height: 34px;
+	border: 1px solid #ddd;
+}
+.pay_method_input div{
+	display: table;
+}
+.pay_method_input div a{
+	display: table-cell;
+	vertical-align: bottom;
+	padding-left: 12px;
+}

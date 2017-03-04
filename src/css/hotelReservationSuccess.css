@@ -1,0 +1,59 @@
+.hotel_reservation_main{
+	width: 100%;
+	height: 574px;
+	background: url("../../images/search-bg.jpg");
+	padding-top: 46px;
+}
+.hotel_reservation_content{
+	width: 1200px;
+	height: 482px;
+	background: #fff;
+	margin: 0 auto;
+}
+.hotel_reservation_content_head{
+	padding: 15px 26px;
+	height: 38px;
+	background: #fbeedc;
+	color: #d97c02;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+.hotel_reservation_content_head a{
+	color: #dd1827;
+}
+.hotel_reservation_content_detail{
+	width: 1008px;
+	margin: 0 auto;
+}
+.hotel_reservation_content_detail h1{
+	text-align: center;
+	line-height: 114px;
+	font-weight: normal;
+	margin: 0;
+}
+.hotel_reservation_content_detail h1 i{
+	font-size: 34px;
+	vertical-align: middle;
+}
+.hotel_reservation_content_detail table{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #dddddd;
+	font-size: 16px;
+	text-align: center;
+}
+.hotel_order_title{
+	height: 43px;
+}
+.hotel_order_information, .hotel_order_information td{
+	border: 1px solid #dddddd;
+	font-size: 14px;
+	height: 84px;
+}
+.hotel_reservation_mark{
+	font-size: 14px;
+	line-height: 46px;
+}
+.order_status{
+	margin-right: 15px;
+}

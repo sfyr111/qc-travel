@@ -1,0 +1,12 @@
+.hotel_reservation_main{
+	width: 100%;
+	height: 574px;
+	background: url("../../images/search-bg.jpg");
+	padding-top: 46px;
+}
+.hotel_reservation_content{
+	width: 1200px;
+	height: 482px;
+	background: #fff;
+	margin: 0 auto;
+}

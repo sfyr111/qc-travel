@@ -1,0 +1,411 @@
+.order {
+	background-color: #f8f8f8;
+	padding-top: 18px;
+	padding-bottom: 82px;
+}
+.order_main {
+	width: 772px;
+}
+.section {
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-width: 0 1px;
+}
+.section_hd {
+	border: 1px solid #eee;
+	border-width: 1px 0;
+	background-color: #f1f1f1;
+	/*height: 36px;*/
+	padding-left: 12px;
+	line-height: 36px;	
+}
+.section_hd .hd_name {
+	float: left;
+ 	font-size: 16px;
+}
+.section_total {
+	margin-top: 12px;
+	height: 66px;
+	line-height: 66px;
+	padding-top: 0 12px;
+}
+.section_total .total_price {
+	width: 552px;
+	display: inline-block;
+}
+.section_total span {
+	margin-left: 12px;
+	font-size: 16px;
+}
+.section_total em {
+	font-style: normal;
+	color: #fb3d3c;
+}
+.section_total .btn_go_order {
+	margin-right: 12px;
+	padding: 0 40px;
+	height: 38px;
+	line-height: 38px;
+	border: none;
+	border-radius: 3px;
+	background-color: #e34449;
+	color: #fff;
+}
+.section_total .btn_go_order:hover {
+	background-color: #b41521;
+}
+.passenger_no {
+	height: 36px;
+	line-height: 36px;
+	padding-left: 12px;
+	font-size: 14px;
+}
+.passenger_no i {
+	margin-left: 10px;
+	color: #32a9fa;
+	cursor: pointer;
+}
+.row {
+	position: relative;
+	height: 36px;
+	line-height: 36px;
+	padding: 6px 0;
+    display: inline-block;
+}
+.row_expense {
+	padding: 20px 0;
+	padding-left: 100px;
+	line-height: 28px;
+}
+.row_expense ul {
+	padding-left: 10px;
+}
+.travel_bill ul {
+	padding-left: 0;
+}
+.travel_bill label {
+	display: block;
+}
+.row_contacter {
+	padding: 20px 0;
+	line-height: 28px;
+}
+.row_expense input,.row_contacter input {
+	vertical-align: middle;
+	margin-right: 2px;
+}
+.row_expense a {
+	color: #dd1827;
+}
+.row_expense span,.row_contacter span {
+	/*color: #9a9a9a;*/
+}
+.row .row_hd {
+	width: 136px;
+	display: inline-block;
+    text-align: right;
+}
+.row .row_hd i {
+	padding: 0 2px;
+	color: #e75d65;
+}
+.row .row_mid {
+	margin-left: 6px;
+	width: 98px;
+}
+.row select.row_mid {
+	height: 36px;
+	padding: 0 2px;
+}
+.row .row_foot {
+	width: 236px;
+	margin-left: 6px;
+}
+.row input.row_foot  {
+	height: 30px;
+	padding-left: 6px;
+}
+.row select.row_body{
+	height: 36px;
+    width: 354px;
+    margin-left: 6px;
+    padding: 0 4px;
+}
+.safest ul li .insure_info {
+	width: 100px;
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+.safest ul li .insure_info.active {
+	border-color: red;
+}
+.row input.row_body {
+	height: 30px;
+	width: 338px;
+	margin-left: 6px;
+	padding: 0 4px;
+}
+.safest {
+	margin-left: 142px;
+}
+.safest .safest_hd {
+	height: 28px;
+	line-height: 28px;
+}
+.safest .safest_hd input{
+	margin-right: 2px;
+ 	vertical-align: middle;
+ }
+.safest ul li {
+	height: 36px;
+	line-height: 36px;
+	margin-bottom: 6px;
+	position: relative;
+}
+.safest ul li select {
+	padding: 0 2px;
+	height: 36px;
+	width: 108px;
+}
+.safest ul li span {
+	margin-left: 6px;
+}
+.safest ul li a {
+	/*color: #dd1827;*/
+}
+.notify_passenger {
+	margin-left: 142px;
+}
+.notify_passenger div {
+	height: 36px;
+	line-height: 36px;
+}
+.notify_passenger input {
+	vertical-align: middle;
+	margin-right: 2px;
+}
+.notify_passenger .phone_no {
+	height: 36px;
+	width: 340px;
+	padding: 0 6px;
+	margin-bottom: 10px;
+}
+.fa-question-circle {
+	color: #32a9fa;
+	font-size: 22px;
+	margin-right: 14px;
+	margin-left: 2px;
+	vertical-align: -2px;
+}
+.btn_add_passenger {
+	margin-left: 142px;
+	margin-top: 56px;
+	margin-bottom: 30px;
+	background-color: #e34449;
+	color: #fff;
+	padding: 2px 36px;
+	height: 38px;
+	border-radius: 3px;
+	border: none;
+}
+.btn_add_passenger:hover {
+	background-color: #b41521;
+}
+.order_air {
+	width: 404px;
+}
+.air_inf {
+	border: 1px solid #dcebf9;
+	border-width: 0 1px;
+}
+.order_air .air_inf_hd {
+	background-color: #fff;
+	height: 38px;
+	line-height: 38px;
+	font-size: 16px;
+	border: 1px solid #dcebf9;
+	border-width: 1px 0;
+}
+.order_air .air_inf_hd span {
+	margin-left: 10px;
+}
+.order_air .air_inf_hd a {
+	float: right;
+	margin-right: 10px;
+	color: #32a9fa;
+}
+.order_air ul {
+	position: relative;
+	background-color: #f1fcff;
+	border-bottom: 1px solid #dcebf9;
+	padding: 0 10px;
+}
+.order_air ul li.flight_info {
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	border-bottom: 1px dashed #dcebf9;
+}
+.order_air ul li.flight_info .flight_time {
+	margin-left: 20px;
+}
+.order_air ul li.flight_info .cabin {
+	float: right;
+}
+.order_air ul li.flight_info .cabin em {
+	color: #32a9fa;
+}
+.order_air ul li.flight_whole {
+	height: 80px;
+	border-bottom: 1px dashed #dcebf9;
+}
+.order_air ul li.flight_whole .flight_from {
+	width: 88px;
+	padding: 24px 0;
+	text-align: center;
+	display: inline-block;
+}
+.order_air ul li.flight_whole .flight_from .time {
+	display: block;
+	font-size: 14px;
+}
+.order_air ul li.flight_whole .flight_info {
+	width: 170px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.order_air ul li.flight_whole .flight_info .stops {
+	position: relative;
+    float: left;
+    width: 186px;
+    height: 8px;
+    border-bottom: 1px solid #32abf9;
+    margin: 0 0px 14px;
+    text-align: center;
+}
+.order_air ul li.flight_whole .flight_info .airline_type {
+	/*display: block;
+	cursor: pointer;*/
+	height: 17px;
+    width: auto;
+    padding: 0 7px;
+    line-height: 17px;
+    border: 1px solid #32abf9;
+    color: #32abf9;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    background-color: #f3f9ff;
+}
+.order_air ul li.flight_whole .flight_to {
+	width: 116px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+}
+.order_air ul li.flight_whole .flight_to .time {
+	display: block;
+	font-size: 14px;
+}
+.bill_inf {
+	height: 54px;
+	line-height: 54px;
+	position: relative;
+}
+.bill_inf span.name {
+	margin-left: 20px;
+}
+.bill_inf .name em {
+	color: #fb3d3c;
+}
+.bill_inf .fund_fuel {
+	margin-left: 20px;
+}
+.bill_inf .fund_fuel em {
+	color: #fb3d3c;
+}
+.bill_inf .refund {
+	float: right;
+	color: #32a9fa;
+	cursor: pointer;
+}
+.order_air .order_list {
+	margin-top: 12px;
+	border: 1px solid #dcebf9;
+	border-top: none;
+}
+.order_list .order_list_hd {
+	background-color: #fff;
+	height: 42px;
+	line-height: 42px;
+	font-size: 14px;
+	border: 1px solid #dcebf9;
+	border-width: 1px 0;
+}
+.order_list .order_list_hd span {
+	margin-left: 20px;
+}
+.order_list .order_list_hd em {
+	float: right;
+	color: #fb3d3c;
+	margin-right: 10px;
+}
+.order_list ul {
+	background-color: #f1fcff;
+	padding: 0 24px 0 38px;
+}
+.order_list ul li {
+	height: 28px;
+	line-height: 28px;
+	position: relative;
+}
+.order_list ul li .name {
+	float: left;
+}
+.order_list ul li .price {
+	float: right;
+	width: 158px;
+	text-align: left;
+}
+.order_list ul li .count	{
+	width: 34px;
+	position: absolute;
+	right: -28px;
+}
+.order_air .change_list {
+	margin-top: 12px;
+	border: 1px solid #dcebf9;
+	border-top: none;
+}
+.name_rule {
+	position: absolute;
+	left: 324px;
+    top: 36px;
+	background-color: #fff;
+	border: 1px solid #dcebf7;
+	width: 342px;
+	padding: 10px;
+	z-index: 1;
+}
+.name_rule span {
+	display: block;
+	line-height: 18px;
+}
+.invoice_rule {
+	position: absolute;
+	left: -2px;
+    top: 36px;
+	background-color: #fff;
+	border: 1px solid #dcebf7;
+	width: 342px;
+	padding: 10px;
+	z-index: 1;
+}
+.invoice_rule span {
+	display: block;
+	line-height: 18px;
+}
