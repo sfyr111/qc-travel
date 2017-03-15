@@ -22,7 +22,7 @@
                   <input
                     class="row_foot"
                     type="text"
-                    placeholder="姓名与登机所持证中的名字一直"
+                    placeholder="姓名与登机所持证中的名字一致"
                     v-model="passenger.psgname"
                     required>
                   <!-- <span v-if="$validation.psgname.invalid">请输入姓名</span> -->
