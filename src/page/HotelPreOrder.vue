@@ -27,7 +27,7 @@
 
 	<!-- 邮寄地址弹窗 -->
 	<!-- <add-mailing-address></add-mailing-address> -->
-	<invoice-pos :show-Pop="isShowAddMailAddressFrame" :pop-Name="addMailAddressTit"></invoice-pos>
+	<invoice-pos :show-Pop.sync="isShowAddMailAddressFrame" :pop-Name="addMailAddressTit"></invoice-pos>
 
 	<q-c-footer></q-c-footer>
 </template>
@@ -248,6 +248,8 @@ export default {
 				showTips('入住人不能为空', 2500)
 				return
 			}
+
+
 			
 			this.checkInDate = $('.hotel_detail_start_date input').val()
 			this.checkOutDate = $('.hotel_detail_end_date input').val()
@@ -273,6 +275,13 @@ export default {
 			var pattern = /^(\d){11}$/
 			if (!pattern.test(this.conPhone)) {
 				showTips('请输入正确的手机号码', 2500)
+				return
+			}
+
+			//	需要邮寄发票，但没有添加邮寄地址
+			console.log(typeof this.invoice)
+			if (this.invoice === '1' && !this.getAddressList.length) {
+				showTips('请先添加邮寄地址', 2500)
 				return
 			}
 

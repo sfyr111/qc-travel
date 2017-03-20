@@ -16,7 +16,7 @@
                 尊敬的用户，您的机票已退订成功，等待航空公司退款。
             </em>
             <em v-else>
-                尊敬的用户，系统超时，已自动取消订到。
+                尊敬的用户，系统超时，已自动取消订单。
             </em>
         </p>
         <b class="toPay" v-if="order.tradingStatus === 0" @click.stop="goPay()">立即支付</b>
