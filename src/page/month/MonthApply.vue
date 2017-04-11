@@ -66,11 +66,7 @@
                                 <p>
                                     <span>公司性质：</span>
                                     <select class="long" v-model="enterpriseNature">
-                                        <option>股份制</option>
-                                        <option>个体户</option>
-                                        <option>外企</option>
-                                        <option>合资</option>
-                                        <option>行政事业单位</option>
+                                        <option v-for="nature in enterpriseNatures" :value="nature.key">{{nature.text}}</option>
                                     </select>
                                 </p>
                             </div>
@@ -88,7 +84,9 @@
                                 </p>
                                 <p>
                                     <span>开户银行：</span>
-                                    <input type="text" name="" v-model="openAcctBank" required>
+                                    <select class="long" v-model="openAcctBank">
+                                        <option v-for="bank in openAcctBanks" :value="bank.key">{{bank.text}}</option>
+                                    </select>
                                 </p>
                             </div>
                         </div>
@@ -232,6 +230,21 @@ export default {
             pollCode: "",
             enterprisePerNum: '',
             enterpriseNature: '',
+            enterpriseNatures: [
+                {key: "GOVERNMENT_AGENCY", text: "国家机关及所属机构"},
+                {key: "LOCAL_GOVERNMENT", text: "地方政府及所属机构"},
+                {key: "EDUCATION", text: "教育"},
+                {key: "MILITARY", text: "军队"},
+                {key: "SELF_EMPLOYED", text: "个体"},
+                {key: "PRIVATELY_OPERATED", text: "私营"},
+                {key: "PUBLICLY_TRADED", text: "股份制"},
+                {key: "CHINESE_FOREIGN_JOINT_VENTURE", text: "中外合资"},
+                {key: "WHOLLY_FOREIGN_OWNED_ENTERPRISE", text: "外商独资"},
+                {key: "LOCAL_COMMUNAL_ENTERPRISE", text: "地方/集体企业"},
+                {key: "SOE", text: "国有企业"},
+                {key: "OTHERS", text: "其他"},
+
+            ],
             conName: "",
             email: "",
             mobile: "",
@@ -246,6 +259,26 @@ export default {
             acctName: "",
             openAcctNO: "",
             openAcctBank: "",
+            openAcctBanks: [
+                {key: "SPDB", text: "上海浦东发展银行"},
+                {key: "CEB", text: "中国光大银行"},
+                {key: "CIB", text: "兴业银行"},
+                {key: "CBC", text: "建设银行"},
+                {key: "CMB", text: "招商银行"},
+                {key: "CGB", text: "广发银行"},
+                {key: "CMBC", text: "中国民生银行"},
+                {key: "GZCB", text: "广州银行股份有限公司"},
+                {key: "PAB", text: "平安银行"},
+                {key: "ICBC", text: "中国工商银行"},
+                {key: "ABC", text: "中国农业银行"},
+                {key: "BOC", text: "中国银行"},
+                {key: "BCM", text: "交通银行"},
+                {key: "PSBC", text: "中国邮政储蓄银行"},
+                {key: "CNCB", text: "中信银行"},
+                {key: "HXB", text: "华夏银行"},
+                {key: "JSCB", text: "江苏银行股份有限公司"},
+                {key: "BOB", text: "北京银行"},
+            ],
             expectedAmt: "",
             businessLicense: "",
             auditReport: "",
