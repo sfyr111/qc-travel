@@ -111,6 +111,7 @@ const mutations = {
 	},
  	AIRSEARCHRESULT: (state, data) => {
  		state.airSearchResult = data
+		console.log(state.airSearchResult)
  	},
  	AIRCITY: (state, data) => {
  		state.airCity = data

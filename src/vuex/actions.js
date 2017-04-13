@@ -68,73 +68,80 @@ export const airSearchResult = ({ dispatch,state }, opt) => {
         type: opt.type,
         url: opt.url,
         data: opt.data,
+        async: opt.async,
         success: opt.success,
         fail: opt.fail
     }
     util.getMyrequest(params).then(function (resp) {
         let airList = []
-        if (resp.success) {
+        if (!!resp.success 
+            && resp.result 
+                && Array.isArray(resp.result.list)
+                    && resp.result.list.length>0
+                        && resp.result.list[0].FlightInfo) {
             // 判断查询
-            if (resp.result && resp.result.list && resp.result.list instanceof Array  && resp.result.list[0].FlightInfo) {
-                // 如果返回数据为对象
-                if (!resp.result.list[0].FlightInfo.length) {
-                    resp.result.list[0].FlightInfo.showPannel = true
-                    // 航班tab对象
-                    resp.result.list[0].FlightInfo.bingoClassInfos=[]
-                    if (resp.result.list[0].FlightInfo.bingoClassInfoList 
-                        && resp.result.list[0].FlightInfo.bingoClassInfoList[0].FlightClassInfo 
-                            && !resp.result.list[0].FlightInfo.bingoClassInfoList[0].FlightClassInfo.length) {
-                        resp.result.list[0].FlightInfo.bingoClassInfos.push(resp.result.list[0].FlightInfo.bingoClassInfoList[0].FlightClassInfo)
+            let FlightInfo = resp.result.list[0].FlightInfo
+            if (Array.isArray(FlightInfo)) {
+                FlightInfo.map(function(info, index) {
+                    info.showPannel = false;
+                    if (index === 0) {
+                        info.showPannel = true;
                     }
-                    if (resp.result.list[0].FlightInfo.bingoClassInfoList 
-                        && resp.result.list[0].FlightInfo.bingoClassInfoList[0].FlightClassInfo 
-                            && resp.result.list[0].FlightInfo.bingoClassInfoList[0].FlightClassInfo.length) {
-                        for (let flight of resp.result.list[0].FlightInfo.bingoClassInfoList[0].FlightClassInfo) {
-                            resp.result.list[0].FlightInfo.bingoClassInfos.push(flight)
-                        }
-                    }
-                    var depTime = resp.result.list[0].FlightInfo.depDate + ' ' + 
-                        resp.result.list[0].FlightInfo.depTime.substring(0, 2)+':'+resp.result.list[0].FlightInfo.depTime.substring(2, 4),
-                        arrTime = resp.result.list[0].FlightInfo.arrDate + ' ' +  
-                        resp.result.list[0].FlightInfo.arrTime.substring(0, 2)+':'+resp.result.list[0].FlightInfo.arrTime.substring(2, 4);
-                    
-                    resp.result.list[0].FlightInfo.duringTime = util.diffTime(depTime, arrTime)
+                    info.bingoClassInfos=[]
 
-                    airList.push(resp.result.list[0].FlightInfo)
+                    if (info.bingoClassInfoList
+                        && info.bingoClassInfoList[0]
+                            && !Array.isArray(info.bingoClassInfoList[0].FlightClassInfo)) {
+                        info.bingoClassInfos.push(info.bingoClassInfoList[0].FlightClassInfo)
+                    }
+
+                    if (info.bingoClassInfoList
+                        && info.bingoClassInfoList[0]
+                            && Array.isArray(info.bingoClassInfoList[0].FlightClassInfo)) {
+                        for (let flight of info.bingoClassInfoList[0].FlightClassInfo) {
+                            info.bingoClassInfos.push(flight)
+                        }
+                    }
+
+                    var depTime = info.depDate + ' ' + 
+                        info.depTime.substring(0, 2)+':'+info.depTime.substring(2, 4),
+                        arrTime = info.arrDate + ' ' +  
+                        info.arrTime.substring(0, 2)+':'+info.arrTime.substring(2, 4);
+                    
+                    info.duringTime = util.diffTime(depTime, arrTime)
+                    airList.push(info)
+                })
+            } else if (Object.prototype.toString.call(FlightInfo) == "[object Object]") {
+                FlightInfo.showPannel = true
+
+                FlightInfo.bingoClassInfos=[]
+
+                if (FlightInfo.bingoClassInfoList 
+                        && FlightInfo.bingoClassInfoList[0].FlightClassInfo 
+                            && !Array.isArray(FlightInfo.bingoClassInfoList[0].FlightClassInfo)) {
+                    FlightInfo.bingoClassInfos.push(FlightInfo.bingoClassInfoList[0].FlightClassInfo)
                 }
-                // 如果返回数据为数组
-                if (resp.result.list[0].FlightInfo.length>=1) {
-                    for (var i = 0; i < resp.result.list[0].FlightInfo.length; i++) {
-                        resp.result.list[0].FlightInfo[i].showPannel = false
-                        if (i === 0) {
-                            resp.result.list[0].FlightInfo[i].showPannel = true
-                        }
-                        // 航班tab对象
-                        resp.result.list[0].FlightInfo[i].bingoClassInfos=[]
-                        if (resp.result.list[0].FlightInfo[i].bingoClassInfoList 
-                            && resp.result.list[0].FlightInfo[i].bingoClassInfoList[0].FlightClassInfo 
-                                && !resp.result.list[0].FlightInfo[i].bingoClassInfoList[0].FlightClassInfo.length) {
-                            resp.result.list[0].FlightInfo[i].bingoClassInfos.push(resp.result.list[0].FlightInfo[i].bingoClassInfoList[0].FlightClassInfo)
-                        }
-                        if (resp.result.list[0].FlightInfo[i].bingoClassInfoList 
-                            && resp.result.list[0].FlightInfo[i].bingoClassInfoList[0].FlightClassInfo 
-                                && resp.result.list[0].FlightInfo[i].bingoClassInfoList[0].FlightClassInfo.length) {
-                            for (let flight of resp.result.list[0].FlightInfo[i].bingoClassInfoList[0].FlightClassInfo) {
-                                resp.result.list[0].FlightInfo[i].bingoClassInfos.push(flight)
-                            }
-                        }
-                        var depTime = resp.result.list[0].FlightInfo[i].depDate + ' ' + 
-                            resp.result.list[0].FlightInfo[i].depTime.substring(0, 2)+':'+resp.result.list[0].FlightInfo[i].depTime.substring(2, 4),
-                            arrTime = resp.result.list[0].FlightInfo[i].arrDate + ' ' +  
-                            resp.result.list[0].FlightInfo[i].arrTime.substring(0, 2)+':'+resp.result.list[0].FlightInfo[i].arrTime.substring(2, 4);
-                        
-                        resp.result.list[0].FlightInfo[i].duringTime = util.diffTime(depTime, arrTime)
-                        airList.push(resp.result.list[0].FlightInfo[i])
-                    }                    
+                if (FlightInfo.bingoClassInfoList 
+                    && FlightInfo.bingoClassInfoList[0].FlightClassInfo 
+                        && Array.isArray(FlightInfo.bingoClassInfoList[0].FlightClassInfo)) {
+                    for (let flight of FlightInfo.bingoClassInfoList[0].FlightClassInfo) {
+                        FlightInfo.bingoClassInfos.push(flight)
+                    }
                 }
-                resp.result.list=airList
-                dispatch('AIRSEARCHRESULT', resp.result)
+                var depTime = FlightInfo.depDate + ' ' + 
+                        FlightInfo.depTime.substring(0, 2)+':'+FlightInfo.depTime.substring(2, 4),
+                        arrTime = FlightInfo.arrDate + ' ' +  
+                        FlightInfo.arrTime.substring(0, 2)+':'+FlightInfo.arrTime.substring(2, 4);
+                    
+                    FlightInfo.duringTime = util.diffTime(depTime, arrTime)
+
+                airList.push(FlightInfo)
+            } else {
+                return airList
             }
+
+            resp.result.list=airList
+            dispatch('AIRSEARCHRESULT', resp.result)
         } 
     })
 }

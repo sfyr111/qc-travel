@@ -116,7 +116,7 @@ export default {
 			depCity: "北京",
 			arrCity: "上海",
 			pageNo: 1,
-			pageSize: 10,
+			pageSize: 20,
 			sortType: '1',
 			isCheckDep: false,      //是否已选去程
 			type:"date",
@@ -132,6 +132,10 @@ export default {
             sourceId: "",
             searchError: false,
             isLoading: false,
+            queryuuid: '',
+            retType: '0',
+            isFinished: 0,
+            isQuering: false,
             btnHasUsed: false, // 节流
             isShowPagePagination: false, // 是否显示分页
             isShowInputCity: false, // 是否展示按字符串匹配
@@ -189,7 +193,7 @@ export default {
             startDate: '',          //  开始日期
             endDate: '',             //  结束日期
             showStartDate: '',         //    航班显示预订日期
-            isCheckDep: false
+            isCheckDep: false,
 		}
 	},
 	created () {
@@ -256,8 +260,9 @@ export default {
                 this.startDate = this.calendars.items.picker1.value
                 this.isCheckDep = false
                 console.log('初始化')
+                this.clearAirSearchList()
             }
-            var def = $.Deferred()
+            // var def = $.Deferred()
             if (cityDep) {
                 this.airCityData.item.cityDep.value.cityName = cityDep
             }
@@ -269,53 +274,57 @@ export default {
 			this.isShowPagePagination = false
             this.isLoading = true
             this.searchError = false
-            
+            this.isFinished = 0;
 
-			var self = this
-			let data = {
-				sourceId: self.sourceId || "",
-				arrCity: this.airCityData.item.cityArr.value.cityName,
-				arrDate: '',
-				depCity: this.airCityData.item.cityDep.value.cityName,
-				depDate: this.startDate,
-				sortType: this.sortType,
-				pageSize: this.pageSize,
-				pageNo: this.pageNo
-			}
-            
-			let opt = {
-				type: 'post',
-				data: data,
-				url: configUrl.airSearchResult.dataUrl,
-				success: function (resp) {			
-                    if (resp.success) {
-                        var totalLimit = resp.result.rowCount
-                        var pageSize = self.pageSize
-                        self.$broadcast('reload-air-list', totalLimit, pageSize, isInit)    
-                        self.isShowPagePagination = true    
-                        self.btnHasUsed = false
-                        self.isLoading = false
-                        def.resolve(resp)
-                    }
-                    if (!resp.success) {
-                        console.log('1'+resp.resultMessage)
-                        self.isLoading = false
-                        self.searchError = true
-                        self.btnHasUsed = false
-                        def.reject()
-                    }
-				},
-				fail: function (resp) {    
-                    console.log('2'+resp.resultMessage)
-                    self.searchError = true      
-                    self.isLoading = false          
-                    self.btnHasUsed = false
-                    def.reject()
-				}
-			}
-			this.airSearchResult(opt)
-            return def.promise()
+            this.queryFlight(isInit)
+
 		},
+        queryFlight (isInit) {
+            var self = this
+            let data = {
+                sourceId: self.sourceId || "",
+                arrCity: this.airCityData.item.cityArr.value.cityName,
+                arrDate: '',
+                depCity: this.airCityData.item.cityDep.value.cityName,
+                depDate: this.startDate,
+                sortType: this.sortType,
+                // pageSize: this.pageSize,
+                // pageNo: this.pageNo,
+                queryuuid: this.queryuuid,
+                retType: this.retType
+            }
+
+            let opt = {
+                type: 'post',
+                data: data,
+                async: false,
+                url: configUrl.airSearchResult.dataUrl,
+                success: function (resp) {     
+                    var totalLimit = resp.result.rowCount
+                    var pageSize = self.pageSize
+                    // self.$broadcast('reload-air-list', totalLimit, pageSize, isInit)    
+                    self.isShowPagePagination = false    
+                    self.queryuuid = resp.result.queryuuid
+                    if (resp.result.isFinished === 0) {
+                        self.queryFlight(false)
+                    }
+                    if (resp.result.isFinished === 1) {
+                        self.isFinished = resp.result.isFinished
+
+                        self.btnHasUsed = false
+                        self.isLoading = false
+                    }
+                },
+                fail: function (resp) {    
+                    console.log('1'+resp.resultMessage)
+                    self.isLoading = false
+                    self.searchError = true
+                    self.btnHasUsed = false
+                    // def.reject()
+                }
+            }
+            this.airSearchResult(opt)
+        },
 		checkedOW: function () {
 			this.isCheckDep = false;
 		},

@@ -7,7 +7,7 @@
                        选择航班：<span>{{cityDep}}-{{cityArr}}&nbsp;&nbsp;{{timeDep}}</span>
                     </div>
                     <div class="air_total fr">
-                        为您找到<em>{{airList.rowCount || 0}}</em>个航班
+                        为您找到<em>{{airList.list.length || 0}}</em>个航班
                     </div></div>
                 <!-- <div class="calendar_tab clearfix">
                     <span class="calendar_control_l" :class="{'disableBtn':isHd}">&lt;</span>
@@ -68,13 +68,13 @@
 	                                    <span class="price_def"><em>￥</em>{{flight.bingoClassInfos | getMin}}<em>起</em></span>
 	                                </td>
 	                                <td width="210px">
-	                                    <span class="package_price">民航发展基金+燃油</span>
-	                                    <span class="package_price_no"><em>￥{{flight.tax}}</em>+<em>￥{{flight.oilTax}}</em></span>
+	                                    <span class="package_price">民航发展基金<!-- +燃油 --></span>
+	                                    <span class="package_price_no"><em>￥{{flight.tax}}</em><!-- +<em>￥{{flight.oilTax}}</em> --></span>
 	                                    <a href="javascript:;" class="btn_up">收起</a>
 	                                </td>
 	                            </tr>
 	                        </table>     
-	                        <table class="air_list_item_pannel" v-show="flight.showPannel" v-if="flight.bingoClassInfos.length > 0">
+	                        <table class="air_list_item_pannel" v-show="flight.showPannel" v-if="flight.bingoClassInfos && flight.bingoClassInfos.length > 0">
 	                            <tr v-for="FlightClassInfo in flight.bingoClassInfos">
 	                                <td width="180px">
 	                                    <span class="filter_classes">{{FlightClassInfo.classNoCn}}</span>
@@ -107,6 +107,7 @@
 	                                    href="javascript:;" 
 	                                    @click="goOrderRTEnd($parent.$index, $index)" 
 	                                    class="btn_book">选返程</a>
+	                                    <span class="surplus" v-if="FlightClassInfo.seatNum !== 'A'">仅剩{{FlightClassInfo.seatNum}}张</span>
 	                                </td>
 	                            </tr>
 	                        </table>  
@@ -114,7 +115,7 @@
                     </div>
                     
                     <!-- 分页 -->
-					<Pagation v-show="isShowPagePagination"></Pagation>
+					<!-- <Pagation v-show="isShowPagePagination"></Pagation> -->
                     <loading v-if="isLoading"></loading>
 					<no-data v-if="!isLoading && airList && airList.list && !airList.list.length || searchError"></no-data>
 					<tips 
@@ -359,13 +360,13 @@ import getMin from '../../filter/getMin'
 
 			    model.oiltax=this.airList.list[Pindex].bingoClassInfos[index].oilTax									 // 燃油税
 
-			    model.policyId=this.airList.list[Pindex].bingoClassInfos[index].policyId									 // 政策id,
+			    model.policyId=this.airList.list[Pindex].bingoClassInfos[index].policyId || ""									 // 政策id,
 
 			    model.price=this.airList.list[Pindex].bingoClassInfos[index].price									 // 购买票价
 
 			    model.promotionId=''									 // 促销Id
 
-			    model.saleDiscountType=this.airList.list[Pindex].bingoClassInfos[index].saleDiscountMap[0].entry.SaleDiscount.saleDiscountType									 // 促销类型， 1 直降， 2返券
+			    // model.saleDiscountType=this.airList.list[Pindex].bingoClassInfos[index].saleDiscountMap[0].entry.SaleDiscount.saleDiscountType									 // 促销类型， 1 直降， 2返券
 
 			    model.seatcodeCn=this.airList.list[Pindex].bingoClassInfos[index].classNoCn									 // 舱位
 			    model.seatcode=this.airList.list[Pindex].bingoClassInfos[index].classNo

@@ -29,6 +29,7 @@ const util = {
 			type: opt.type,
 			dataType: 'json',
 			url: opt.url,
+      async: opt.async || true,
 			data: opt.data
 		})
 		.done(function (resp) {
