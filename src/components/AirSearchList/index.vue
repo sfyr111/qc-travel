@@ -7,7 +7,7 @@
                        选择航班：<span>{{cityDep}}-{{cityArr}}&nbsp;&nbsp;{{timeDep}}</span>
                     </div>
                     <div class="air_total fr">
-                        为您找到<em>{{airList.list.length || 0}}</em>个航班
+                        为您找到<em>{{airList.list ? airList.list.length : 0}}</em>个航班
                     </div></div>
                 <!-- <div class="calendar_tab clearfix">
                     <span class="calendar_control_l" :class="{'disableBtn':isHd}">&lt;</span>
@@ -384,6 +384,9 @@ import getMin from '../../filter/getMin'
 			    model.tripType=this.tripType									 // 行程标志 OW,单程。 RT往返
 
 			    model.venderPrice=this.airList.list[Pindex].bingoClassInfos[index].venderPrice									 // 商家成本价格
+			    model.uniqueKey=this.airList.list[Pindex].bingoClassInfos[index].uniqueKey									 // 商家成本价格
+			    model.productCode=this.airList.list[Pindex].bingoClassInfos[index].productCode									 // 商家成本价格
+			    model.seatType=this.airList.list[Pindex].bingoClassInfos[index].seatType									 // 商家成本价格
 
 	        	return model
 	        },

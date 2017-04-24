@@ -121,19 +121,19 @@ h1,h2,h3,h4,h5,h6{
 .content .page1200 .detail .company-information form .part .information p select.long{
     width: 310px;
 }
-.content .page1200 .detail .company-information form .part3 .information div.upload-box{
+.content .page1200 .detail .company-information form .part3 .information .upload-box{
     font-size: 12px;
     line-height: 32px;
     margin-bottom: 10px;
     color:#646464;
     position: relative;
 }
-.content .page1200 .detail .company-information form .part3 .information div.upload-box span{
+.content .page1200 .detail .company-information form .part3 .information .upload-box span{
     display: inline-block;
     width: 400px;
     text-align: right;
 }
-.content .page1200 .detail .company-information form .part3 .information div.upload-box div.upload{
+.content .page1200 .detail .company-information form .part3 .information .upload-box .upload{
     position: absolute;
     left:405px;
     top:0;
@@ -148,7 +148,12 @@ h1,h2,h3,h4,h5,h6{
     color:#0a2552;
     overflow: hidden;
 }
-.content .page1200 .detail .company-information form .part3 .information div.upload-box div.upload input{
+.content .page1200 .detail .company-information form .part3 .information a.downTemp {
+    display: block;
+    left: 520px!important;    
+    z-index: 99;
+}
+.content .page1200 .detail .company-information form .part3 .information .upload-box .upload input{
     position: absolute;
     left:0;
     top:0;
@@ -160,7 +165,7 @@ h1,h2,h3,h4,h5,h6{
     height: 100%;
     line-height: 32px;
 }
-.content .page1200 .detail .company-information form .part3 .information div.upload-box span.file-name{
+.content .page1200 .detail .company-information form .part3 .information .upload-box span.file-name{
     display: block;
     width: 400px;
     height: 32px;
@@ -169,6 +174,9 @@ h1,h2,h3,h4,h5,h6{
     top:0;
     text-align: left;
     overflow: hidden;
+}
+.content .page1200 .detail .company-information form .part3 .information .upload-box span i {
+    color:#ee3434;
 }
 .content .page1200 .detail .company-information form .part3 .information p.notice{
     text-align: center;

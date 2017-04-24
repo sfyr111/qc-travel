@@ -141,7 +141,9 @@ export const airSearchResult = ({ dispatch,state }, opt) => {
             }
 
             resp.result.list=airList
-            dispatch('AIRSEARCHRESULT', resp.result)
+            if (resp.result.isFinished === 1) {
+                dispatch('AIRSEARCHRESULT', resp.result)
+            }
         } 
     })
 }

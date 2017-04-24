@@ -92,7 +92,15 @@
                         </div>
                         <div class="part3 part">
                             <p class="part3-title">信息登记</p>
-                            <div class="information">
+                            <div class="information">                               
+                                <p>
+                                    <span>法人姓名：</span>
+                                    <input type="text" name="" placeholder="请输入法人姓名" v-model="legalPerson" required>
+                                </p>                               
+                                <p>
+                                    <span>法人身份证号：</span>
+                                    <input type="text" name="" placeholder="请输入法人身份证号" v-model="legalPersonId" required>
+                                </p>
                                 <p>
                                     <span>预计月消费金额：</span>
                                     <input type="text" name="" v-model="expectedAmt" required>
@@ -106,6 +114,16 @@
                                     </div>
                                     <span class="file-name"></span>
                                     <p class="notice">注：营业执照需要加盖公章<i>（文件大小不超过5M）</i></p>
+                                </div>
+                                <div class="upload-box">
+                                    <span>白条申请书<i>(*pdf文件)</i>：</span>
+                                    <div class="upload">点击上传
+                                        <form name="form1">
+                                            <input type="file" name="iouApplyFile" @change="formUpload($event, '.upload-box', 'iouApplyFile')" class="input1">
+                                        </form> 
+                                    </div>
+                                    <a class="upload downTemp" target="_blank" href="http://travel.17cai.com/static/iou_agreement_file_20170421.docx">下载模板</a>
+                                    <span class="file-name"></span>
                                 </div>
                                 <p class="notice2">以下信息<i>非必填项</i>，请提供最近三个月的商旅供应商，物业或者其它供应商的发票及相应的支付凭证，可加快审批速度。</p>
                                 
@@ -246,6 +264,8 @@ export default {
 
             ],
             conName: "",
+            legalPerson: "",
+            legalPersonId: "",
             email: "",
             mobile: "",
             telphone: "",
@@ -285,6 +305,7 @@ export default {
             certificate1: "",
             certificate2: "",
             certificate3: "",
+            iouApplyName: "",
             invoice1: "",
             invoice2: "",
             invoice3: ""
@@ -323,6 +344,8 @@ export default {
                 companyName: this.companyName,
                 pollCode: this.pollCode,
                 conName: this.conName,
+                legalPerson: this.legalPerson,
+                legalPersonId: this.legalPersonId,
                 email: this.email,
                 mobile: this.mobile,
                 telphone: this.telphone,
@@ -344,6 +367,7 @@ export default {
                 certificate1: this.certificate1,
                 certificate2: this.certificate2,
                 certificate3: this.certificate3,
+                iouApplyFile: this.iouApplyFile,
                 invoice1: this.invoice1,
                 invoice2: this.invoice2,
                 invoice3: this.invoice3

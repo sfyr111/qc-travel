@@ -301,12 +301,14 @@ export default {
                 url: configUrl.airSearchResult.dataUrl,
                 success: function (resp) {     
                     var totalLimit = resp.result.rowCount
-                    var pageSize = self.pageSize
+                    // var pageSize = self.pageSize
                     // self.$broadcast('reload-air-list', totalLimit, pageSize, isInit)    
                     self.isShowPagePagination = false    
                     self.queryuuid = resp.result.queryuuid
                     if (resp.result.isFinished === 0) {
-                        self.queryFlight(false)
+                        setTimeout(function() {
+                            self.queryFlight(false)
+                        }, 1000);                        
                     }
                     if (resp.result.isFinished === 1) {
                         self.isFinished = resp.result.isFinished
