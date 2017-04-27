@@ -318,6 +318,17 @@ html input[type="button"]{
     text-align: center;
     position: relative;
 }
+.air_list_item_pannel td .sourceLogo {
+    position: absolute;
+    font-size: 4px;
+    color: #ee3434;
+    padding: 0px 10px;
+    border: 1px solid skyblue;
+    border-radius: 6px;
+    /* margin-left: 10px; */
+    background-color: #fff;
+    left: 6px;
+}
 .air_list_item_pannel td .surplus {
     position: absolute;
     left: 144px;

@@ -93,13 +93,13 @@ export default {
 			payType: 1,
 			supplierType: supplierType
 		}
-
+		let self = this
 		let opt = {
 			type: 'POST',
 			data: data,
 			url: configUrl.checkHotelRoomNum.dataUrl,
 			success: function (resp) {
-				console.log(resp)
+				self.$dispatch('update_model', resp.result.webOrderPlan.invoiceMode)
 			},
 			fail: function (resp) {
 				console.log(resp)

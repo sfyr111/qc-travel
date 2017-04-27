@@ -133,7 +133,7 @@ export default {
             searchError: false,
             isLoading: false,
             queryuuid: '',
-            retType: '0',
+            retType: '1',
             isFinished: 0,
             isQuering: false,
             btnHasUsed: false, // 节流

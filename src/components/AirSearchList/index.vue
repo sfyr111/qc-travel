@@ -78,6 +78,7 @@
 	                            <tr v-for="FlightClassInfo in flight.bingoClassInfos">
 	                                <td width="180px">
 	                                    <span class="filter_classes">{{FlightClassInfo.classNoCn}}</span>
+	                                    <em class="sourceLogo">{{FlightClassInfo.airCompanyFlag === 1 ? '航司' : '商家'}}</em>
 	                                </td>
 	                                <td width="134px">
 	                                    <span class="discount">{{FlightClassInfo.discount/10 == 10 ? "全价" : FlightClassInfo.discount/10 + "折"}}</span>
@@ -254,7 +255,6 @@ import getMin from '../../filter/getMin'
 	        goOrderOW: function(Pindex, index) {
 				sessionStorage.clear()
 				var model = this.setModel(Pindex, index)
-
 				sessionStorage.setItem('model', '['+JSON.stringify(model)+']')
 
 	            this.sourceId = this.airList.list[Pindex].bingoClassInfos[index].sourceId
@@ -271,6 +271,7 @@ import getMin from '../../filter/getMin'
 				sessionStorage.clear()
 
 				var model = this.setModel(Pindex, index)
+				model.tripType = 'OW'
 				sessionStorage.setItem('model', '['+JSON.stringify(model)+']')
 
 				this.sourceId = this.airList.list[Pindex].bingoClassInfos[index].sourceId

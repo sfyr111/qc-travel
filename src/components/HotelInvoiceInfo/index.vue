@@ -5,7 +5,7 @@
 	</h1>
 	<div class="hotel_invoice_info_content">
 		<!-- 是否需要发票 -->
-		<div class="is_need_hotel_invoice_info clearfix">
+		<div v-show="invoiceMode === 'Elong'" class="is_need_hotel_invoice_info clearfix">
 			<span class="fl color_66">
 				是否需要发票
 			</span>
@@ -21,6 +21,11 @@
 			</span>
 			<span class="fl">
 				发票由商家开具（离店后次日开具并寄出，预计10-15个工作日送达，遇节假日顺延）
+			</span>
+		</div>
+		<div v-show="invoiceMode !== 'Elong'" class="is_need_hotel_invoice_info clearfix">
+			<span class="fl color_66">
+				如需开发票，请向酒店前台索要
 			</span>
 		</div>
 
@@ -70,6 +75,9 @@ export default {
 	props: {
 		poslist: {
 			type: Array
+		},
+		invoiceMode: {
+			type: String
 		}
 	},
 	data: function () {

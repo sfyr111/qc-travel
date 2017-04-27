@@ -122,7 +122,7 @@
                                             <input type="file" name="iouApplyFile" @change="formUpload($event, '.upload-box', 'iouApplyFile')" class="input1">
                                         </form> 
                                     </div>
-                                    <a class="upload downTemp" target="_blank" href="http://travel.17cai.com/static/iou_agreement_file_20170421.docx">下载模板</a>
+                                    <a class="upload downTemp" target="_blank" href="http://www.17cai.com/images/template/iou_agreement_file.docx">下载模板</a>
                                     <span class="file-name"></span>
                                 </div>
                                 <p class="notice2">以下信息<i>非必填项</i>，请提供最近三个月的商旅供应商，物业或者其它供应商的发票及相应的支付凭证，可加快审批速度。</p>

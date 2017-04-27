@@ -14,7 +14,7 @@
 				<hotel-post-card-guarantee-info class="none"></hotel-post-card-guarantee-info>
 
 				<!-- 发票信息 -->
-				<hotel-invoice-info :poslist="getAddressList"></hotel-invoice-info>
+				<hotel-invoice-info :poslist="getAddressList" :invoice-mode="invoiceMode"></hotel-invoice-info>
 			</div>
 			<div class="fr hotel_pre_oreder_right">
 				<hotel-pre-order-right></hotel-pre-order-right>
@@ -70,6 +70,7 @@ export default {
 			serviceFee: '',				// 服务费
 			supplierType: '',			//	供应商类型:1艺龙 2携程
 			invoice: '',					//	是否需要发票：0不需要 1需要
+			invoiceMode: '',
 			//	以下为非必填
 			invoiceId: '',				//	发票地址ID
 			invoiceJson: {
@@ -385,13 +386,13 @@ export default {
 				payType: 1,
 				supplierType: this.supplierType
 			}
-
+			let self = this
 			let opt = {
 				type: 'POST',
 				data: data,
 				url: configUrl.checkHotelRoomNum.dataUrl,
 				success: function (resp) {
-					console.log(resp)
+					self.$dispatch('update_model', resp.result.webOrderPlan.invoiceMode)
 				},
 				fail: function (resp) {
 					console.log(resp)
@@ -399,6 +400,9 @@ export default {
 			}
 
 			this.checkHotelRoomNum(opt)
+		},
+		'update_model': function (str) {
+			this.invoiceMode = str
 		}
 	}
 }

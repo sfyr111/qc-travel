@@ -1,5 +1,5 @@
 //configUrl.js  接口请求路劲
-var devPrefix = 'http://192.168.16.210:8080/qc-travel/'
+var devPrefix = 'http://192.168.16.165:8080/qc-travel/'
 var proPrefix = 'http://travel.17cai.com/'
 var rootPath = process.env.NODE_ENV === "production" ? proPrefix : devPrefix
 
